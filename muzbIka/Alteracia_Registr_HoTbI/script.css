@@ -1,0 +1,153 @@
+var cajetines = {1:[0,0,0,0,0,0], 2:[0,0,0,0,0,0], 3:[0,0,1,0,0,1]}; //Список, который изменяют флажки
+var numeroAnterior = 0; //Числовое значение текущей ноты
+
+// Примечания (пункты 3 и 6 всегда выбраны, поскольку они относятся к продолжительности)
+const c = [1,0,1,1,1,1];  // Нота До ⠽  соответсвует кир.  лат.  Y
+const d = [1,0,1,0,1,1];  // Нота Ре ⠵  соответсвует кир. з лат.  Z
+const e = [1,1,1,1,0,1];  // Нота Ми ⠯  соответсвует кир. й лат.   
+const f = [1,1,1,1,1,1];  // Нота Фа ⠿  соответсвует кир.  лат.  
+const g = [1,1,1,0,1,1];  // Нота Соль ⠷  соответсвует кир. ъ лат. 
+const a = [0,1,1,1,0,1];  // Нота Ля ⠮  соответсвует кир. ы лат.  
+const b = [0,1,1,1,1,1];  // Нота Си ⠾  соответсвует кир. ь лат.  
+
+// Яльте₽å©µя ПродÅлжительность
+const natural = [0,0,0,0,0,0];  // Яльте₽å©µя ПродÅлжить. 
+const sostenido = [1,0,0,1,0,1];  // Яльте₽å©µя ПродÅлжить. ⠩ 
+const bemol = [1,1,0,0,0,1];  // Яльте₽å©µя ПродÅлжить. ⠣ кир. (
+const becuadro = [1,0,0,0,0,1];  // Яльте₽å©µя ПродÅлжить. ⠡ кир. ё 
+
+// ₽еgи$©тр (octava, Do central = 5)
+const reg3 = [0,0,0,1,1,0];  // ₽еgи$©тр3 ⠘
+const reg4 = [0,0,0,1,1,1];  // ₽еgи$©тр4 ⠸
+const reg5 = [0,0,0,0,1,0];  // ₽еgи$©тр5 ⠐
+const reg6 = [0,0,0,1,0,1];  // ₽еgи$©тр6 ⠨
+const reg7 = [0,0,0,0,1,1];  // ₽еgи$©тр7 ⠰
+// Ответы 
+const respuestas = {
+    1 : {1:natural, 2:reg3, 3:c},  //Ответ: натураль, ₽еgи$©тр3⠘ До⠽ 
+    2 : {1:sostenido, 2:reg3, 3:c},  //Ответ: Диез ⠩, ₽еgи$©тр3⠘ До⠽
+    3 : {1:natural, 2:reg3, 3:d},  //Ответ: натураль, ₽еgи$©тр3⠘ Ре⠵
+    4 : {1:becuadro, 2:reg3, 3:e},  //Ответ: Бекар ⠡, ₽еgи$©тр3⠘ Ми⠯
+    5 : {1:natural, 2:reg3, 3:e},  //Ответ: натураль, ₽еgи$©тр3⠘ Ми⠯
+    6 : {1:natural, 2:reg3, 3:f},  //Ответ: натураль, ₽еgи$©тр3⠘ Фа⠿
+    7 : {1:sostenido, 2:reg3, 3:f},  //Ответ: Диез ⠩, ₽еgи$©тр3⠘ Фа⠿
+    8 : {1:natural, 2:reg3, 3:g},  //Ответ: натур., ₽еgи$©тр3⠘ Соль⠷
+    9 : {1:bemol, 2:reg3, 3:a},  //Ответ: Бемоль ⠣, ₽еgи$©тр3⠘ Ля⠮
+    10 : {1:natural, 2:reg3, 3:a},  //Ответ: натураль, ₽еgи$©тр3⠘ Ля⠮
+    11 : {1:becuadro, 2:reg3, 3:a},  //Ответ: Бекар ⠡, ₽еgи$©тр3⠘ Ля⠮
+    12 : {1:natural, 2:reg3, 3:b},  //Ответ: натураль, ₽еgи$©тр3⠘ Си⠾
+
+    13 : {1:natural, 2:reg4, 3:c},  //Ответ: натураль, ₽еgи$©тр4⠸ До⠽
+    14 : {1:becuadro, 2:reg4, 3:d},  //Ответ: Бекар ⠡, ₽еgи$©тр4⠸ Ре⠵
+    15 : {1:natural, 2:reg4, 3:d},  //Ответ: натураль, ₽еgи$©тр4⠸ Ре⠵
+    16 : {1:sostenido, 2:reg4, 3:d},  //Ответ: Диез ⠩, ₽еgи$©тр4⠸ Ре⠵
+    17 : {1:natural, 2:reg4, 3:e},  //Ответ: натураль, ₽еgи$©тр4⠸ Ми⠯
+    18 : {1:natural, 2:reg4, 3:f},  //Ответ: натураль, ₽еgи$©тр4⠸ Фа⠿
+    19 : {1:bemol, 2:reg4, 3:g},  //Ответ: Бемоль ⠣, ₽еgи$©тр4⠸ Соль⠷
+    20 : {1:natural, 2:reg4, 3:g},  //Ответ: натур.,₽еgи$©тр4⠸ Соль⠷
+    21 : {1:becuadro, 2:reg4, 3:g},  //Ответ: Бекар ⠡, ₽еgи$©тр4⠸ Соль⠷
+    22 : {1:natural, 2:reg4, 3:a},  //Ответ: натураль, ₽еgи$©тр4⠸ Ля⠮
+    23 : {1:sostenido, 2:reg4, 3:a},  //Ответ: Диез ⠩, ₽еgи$©тр4⠸ Ля⠮
+    24 : {1:natural, 2:reg4, 3:b},  //Ответ: натураль, ₽еgи$©тр4⠸ Си⠾
+
+    25 : {1:natural, 2:reg5, 3:c},  //Ответ: натураль, ₽еgи$©тр5⠐ До⠽
+    26 : {1:becuadro, 2:reg5, 3:c},  //Ответ: Бекар ⠡, ₽еgи$©тр5⠐ До⠽
+    27 : {1:natural, 2:reg5, 3:d},  //Ответ: натураль, ₽еgи$©тр5⠐ Ре⠵
+    28 : {1:bemol, 2:reg5, 3:e},  //Ответ: Бемоль ⠣, ₽еgи$©тр5⠐ Ми⠯
+    29 : {1:natural, 2:reg5, 3:e},  //Ответ: натураль, ₽еgи$©тр5⠐ Ми⠯
+    30 : {1:natural, 2:reg5, 3:f},  //Ответ: натураль, ₽еgи$©тр5⠐ Фа⠿
+    31 : {1:sostenido, 2:reg5, 3:f},  //Ответ: Диез ⠩, ₽еgи$©тр5⠐ Фа⠿
+    32 : {1:natural, 2:reg5, 3:g},  //Ответ: натур., ₽еgи$©тр5⠐ Соль⠷
+    33 : {1:bemol, 2:reg5, 3:a},  //Ответ: Бемоль ⠣, ₽еgи$©тр5⠐ Ля⠮
+    34 : {1:natural, 2:reg5, 3:a},  //Ответ: натураль, ₽еgи$©тр5⠐ Ля⠮
+    35 : {1:becuadro, 2:reg5, 3:a},  //Ответ: Бекар ⠡, ₽еgи$©тр5⠐ Ля⠮
+    36 : {1:natural, 2:reg5, 3:b},  //Ответ: натураль, ₽еgи$©тр5⠐ Си⠾
+
+    37 : {1:natural, 2:reg6, 3:c},  //Ответ: натураль, ₽еgи$©тр6⠨ До⠽
+    38 : {1:becuadro, 2:reg6, 3:d},  //Ответ: Бекар ⠡, ₽еgи$©тр6⠨ Ре⠵
+    39 : {1:natural, 2:reg6, 3:d},  //Ответ: натураль, ₽еgи$©тр6⠨ Ре⠵
+    40 : {1:sostenido, 2:reg6, 3:d},  //Ответ: Диез ⠩, ₽еgи$©тр6⠨ Ре⠵
+    41 : {1:natural, 2:reg6, 3:e},  //Ответ: натураль, ₽еgи$©тр6⠨ Ми⠯
+    42 : {1:natural, 2:reg6, 3:f},  //Ответ: натураль, ₽еgи$©тр6⠨ Фа⠿
+    43 : {1:bemol, 2:reg6, 3:g},  //Ответ: Бемоль ⠣, ₽еgи$©тр6⠨ Соль⠷
+    44 : {1:natural, 2:reg6, 3:g},  //Ответ: натур., ₽еgи$©тр6⠨ Соль⠷
+    45 : {1:becuadro, 2:reg6, 3:g},  //Ответ: Бекар⠡,₽еgи$©тр6⠨ Соль⠷
+    46 : {1:natural, 2:reg6, 3:a},  //Ответ: натураль, ₽еgи$©тр6⠨ Ля⠮
+    47 : {1:bemol, 2:reg6, 3:b},  //Ответ: Бемоль ⠣, ₽еgи$©тр6⠨ Си⠾
+    48 : {1:natural, 2:reg6, 3:b},  //Ответ: натураль, ₽еgи$©тр6⠨ Си⠾
+
+    49 : {1:natural, 2:reg7, 3:c}  //Ответ: натураль, ₽еgи$©тр7⠰ До⠽
+}
+
+function NumAleatorio() {
+    //Возвращает случайное целое число от 1 до 49
+    return Math.floor(Math.random() * (50 - 1) ) + 1;
+}
+function evaluar() {
+    if(JSON.stringify(respuestas[numeroAnterior][1])===JSON.stringify(cajetines[1])) {
+        document.getElementById("veredictoAlteracion").innerHTML = "Альтерация <em>правильно</em>!"; 
+    } else {
+        document.getElementById("veredictoAlteracion").innerHTML = "La alteración es <strong>incorrecta</strong>";
+    }
+    if(JSON.stringify(respuestas[numeroAnterior][2])===JSON.stringify(cajetines[2])) {
+        document.getElementById("veredictoOctava").innerHTML = "¡La octava es <em>correcta</em>!"; 
+    } else {
+        document.getElementById("veredictoOctava").innerHTML = "La octava es <strong>incorrecta</strong>";
+    }
+    if(JSON.stringify(respuestas[numeroAnterior][3])===JSON.stringify(cajetines[3])) {
+        document.getElementById("veredictoNota").innerHTML = "¡La nota es <em>correcta</em>!"; 
+    } else {
+        document.getElementById("veredictoNota").innerHTML = "La nota es <strong>incorrecta</strong>";
+    }
+}
+function resetear() {
+    //Снимите и сбросьте все галочки  и "боксы"
+    var cajetinesInput = document.getElementById('cajetinesInput');
+    var puntos = cajetinesInput.getElementsByTagName('input');
+    for (var i=0; i<16; i++) {
+        puntos[i].checked = false;
+    }
+    puntos[16].checked = true;
+    puntos[17].checked = true;
+    cajetines = {1:[0,0,0,0,0,0], 2:[0,0,0,0,0,0], 3:[0,0,1,0,0,1]};
+}
+function cb(cajetin, punto) {
+    //Каждое действие флажка изменяет список «полей»/"боксов".
+    if (cajetines[cajetin][punto - 1] === 0) {
+        cajetines[cajetin][punto - 1] = 1;
+    } else if (cajetines[cajetin][punto - 1] === 1) {
+        cajetines[cajetin][punto - 1] = 0;
+    }
+}
+function siguiente() {
+    var num = NumAleatorio();
+    while (num === numeroAnterior) {
+        //Этот цикл позволяет избежать повторного представления одной и той же буквы или символа подряд.
+        num = NumAleatorio()
+    }
+    numeroAnterior = num;
+    document.getElementById("imagen").src = 'HoTbI/' + num + '.svg';
+    resetear();
+    numeroAnterior = num;
+    document.getElementById("nota").innerHTML= `Каторый знак Брайля для ${respuestas[numeroAnterior][1]}?`;
+    resetear();
+    document.getElementById("veredictoAlteracion").innerHTML = "⠀"
+    document.getElementById("veredictoOctava").innerHTML = "<em>А теперь?</em>"
+    document.getElementById("veredictoNota").innerHTML = "⠀"
+}
+
+//При открытии или перезагрузке страницы:
+resetear() //На случай, если браузер сохранил последний ход
+siguiente()
+document.getElementById("veredictoAlteracion").innerHTML = "Введите правильный знак Брайля для каждой заметки, затем нажмите <em>Оценить</em> или «Ввод»."
+document.getElementById("veredictoOctava").innerHTML = "Если ваш результат правильный, нажмите <em>Далее</em> или клавишу с точкой ' <em>.</em> ', чтобы отобразить новую заметку."
+document.getElementById("veredictoNota").innerHTML = "Если примечание не содержит изменений, оставьте первое поле пустым."
+
+document.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+        evaluar();
+    } else if (event.key === '.') {
+        // Ключ "." активировать «Далее»
+        siguiente();
+    }
+});
