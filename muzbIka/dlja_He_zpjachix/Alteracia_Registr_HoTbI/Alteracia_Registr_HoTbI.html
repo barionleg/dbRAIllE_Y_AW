@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+        <title>DB'mе₽минаЛ'Б₽АйЛЬ A₽p ⠙⠃⠀⠠⠞⠻⠍⠔⠁⠇⠀⠠⠃⠗⠇</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <meta property="og:title" content="Те₽мБ₽айль. DB от ДвÅ₽gЭ€Ли вµнтерHæтвÅ₽©K$">
+        <meta property="og:image" content="PagePreview.png">
+        <meta property="og:description" content="Пересмотрите базовый шрифт Брайля и музыковедение MO©uK bA℞.">
+        <meta property="og:url" content="https://Aibolem.github.io/BrailleTermWeb_Austereich/">
+
+    <link rel="icon" href="../../../icon.png" type="image/icon type">
+    <link href="../../../style.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <button id="NoCSS" onclick="desactivarCSS()">достуПная странµ©а</button>
+
+        <!--НАВИГАЦИОННАЯ ПАНЕЛЬ СУПЕРИОР SUPERIOR-->
+        <div class="navbar">
+            <div class="dropdownNav">
+                <button class="dropbtnNav">Texт</button>
+                <div class="dropdownNav-content">
+                    <a href="../../index.html">©майля Б₽айлЯ</a>
+                    <a href="../../picmo/pismo.html">Пишите ß Б₽айлЯ</a>
+                    <a href="../../pravila/pravila.html">П₽Aßuла ßupтyaль</a>
+                    <a href="../../bonus/bonus.html">Má©hina 'ßonu©'</a>
+                    <a href="../../Text_v_braille/text_v_braille.html">Texт B Б₽айлЯ</a>
+                </div>  
+            </div>
+            <div class="dropdownNav">
+                <button class="dropbtnNavWhenActive">MO©uKОграфµ®</button>
+                <div class="dropdownNav-content">
+                <a href="../../muzbIka/dlja_He_zpjachix/HoTbI_pausa_prodaljitelnost/HoTbI_pausa_prodaljitelnost.html">Для Не Зрячих</a>
+                <a class="active">Для Зрячих</a>
+                </div>  
+            </div>
+            <a href="https://ru.wikipedia.org/wiki/Шрифт_Брайля">Форум</a>
+            <a id="about" href="https://barionleg.github.io/froide/" target="_blank">О</a>
+        </div> 
+
+
+        <h1>DB'mе₽минаЛ'Б₽АйЛЬ A₽p ⠙⠃⠀⠠⠞⠻⠍⠔⠁⠇⠀⠠⠃⠗⠇</h1>
+        <h3>Повторите элементарный знак брайлевской нотографии.</h3>
+
+        
+        <hr>
+
+        <p><label><em>Выберите, какие элементы просмотреть:</em></label></p>
+
+        <!--МЕНЮ ПАРАМЕТРОВ-->
+        <div class="dropdown">
+            <button onclick="hover" class="dropbtn">Изменения, регистр и ноты</button>
+            <div class="dropdown-content">
+                <a href="../HoTbI_pausa_prodaljitelnost/HoTbI_pausa_prodaljitelnost.html">Ноты, паузы и продолжительность</a>
+                <a href="../AkkopdbI/AkkopdbI.html">Аккорды</a>
+
+            </div>
+        </div>
+
+        <br/>
+
+
+        <h3><label for="respuesta" id="nota"></label></h3>
+				<h5><img for="respuesta" id="imagen" style="background-color:white;"></h5>
+
+        <p><label for="respuesta">Ваш ответ:</label>
+        <input id="respuesta" type="text" autofocus></p>
+        <p><input id="evaluar" type="Submit" onclick="evaluar()" value="Оценивать"></p>
+        <p><input id="siguiente" type="Submit" onclick="siguiente()" value="Следующий"></p>
+
+        <hr>
+		       <style> /* Colores de alto contraste para personas con baja visibilidad*/
+            body,input,button {
+                color:#00CDFF;
+                background-color: black;
+            }
+            a {
+                color:chartreuse;
+            }
+            button,input{
+                height: 40px;
+                border-color: chartreuse;
+            }
+        </style>
+
+        <h3><label>Ресурсы:</label></h3>
+        <p><a href="../../../tablica.html" title="Помотреть вводное пособие по музыковедению" target="_blank">
+        <hr>
+        <h3>Инструкции:</h3>
+        <p><label>Напишите символы Брайля, соответствующие примечанию, которое требуется ниже, в следующем порядке.
+             без пробелов между каждым знаком Брайля.
+        </label></p>
+        <ol>
+            <li>Сначала Альтерация (si tiene).</li>
+            <li>Затем регистр (октава), принимая центральный регистр равным 5 (средний F, в первом пробеле скрипичного ключа = F 5).</li>
+            <li>И в конце нота (До, Ре и т.д.) всегда со значением восьмой ноты.</li>
+        </ol>
+        <p><label>Используйте QWERTY-клавиатуру как клавиатуру Perkins ("f" вместо точки "1", "d" = "2", "S" = "3"; "j" вместо точки "4", "k" = "5", "l" = "6").<br/>
+            Чтобы оценить свой ответ, нажмите клавишу "Ввод".<br/>
+            Если вы отказываетесь от ноты, нажмите клавишу точки "." чтобы познакомить вас с новым знаком музыкографии Брайля.</a></p>
+        <p><a href="https://barionleg.github.io/froide/" target="_blank">все на фхваДЭ€ [fröIde]</a></p>
+        <p><a href="https://github.com/aibolem/BrailleTermWeb_Austereich/releases"
+            title="Utiliza esta aplicación sin internet" target="_blank">Используйте это приложение без интернета</a></p>
+        <p><a href="mailto:composersunion.ge@musician.org" title="написать создателю кода кооДвook" target="_blank">Контакт</a></p>
+
+<!-- КödboK JÅвAR$©rui₽т в конце, чтобы не задерживать рендеринг страницы -->
+        <script src="script.js"></script>
+
+    </body>
+</html>
