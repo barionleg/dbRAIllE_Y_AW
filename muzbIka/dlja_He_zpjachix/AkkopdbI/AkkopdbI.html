@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+    <head>
+      
+        <title>DB'mе₽минаЛ'Б₽АйЛЬ A₽p ⠙⠃⠀⠠⠞⠻⠍⠔⠁⠇⠀⠠⠃⠗⠇ Musicografía</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<link rel="icon" href="../../../icon.png" type="image/icon type">  
+		<link href="../../../style.css" rel="stylesheet" type="text/css" />
+        <meta property="og:title" content="DB'mе₽минаЛ'Б₽АйЛЬ A₽p ⠙⠃⠀⠠⠞⠻⠍⠔⠁⠇⠀⠠⠃⠗⠇ Musicografía">
+        <meta property="og:image" content="./../../PagePreviewMusic.png">
+        <meta property="og:description" content="Просмотрите элементарную сигнографию брайлевской нотографии.">
+        <meta property="og:url" content="https://barionleg.github.io/froide/">
+        
+    </head>
+
+    <body>
+        <button><a href="../../HoTbI_pausa_prodaljitelnost/HoTbI_pausa_prodaljitelnost.html">Вернуться на сайт для зрячих</a></button>
+        <h1>DB'mе₽минаЛ'Б₽АйЛЬ A₽p ⠙⠃⠀⠠⠞⠻⠍⠔⠁⠇⠀⠠⠃⠗⠇ Musicografía</h1>
+        <p>Рассматривает элементарную сигнографию брайлевской нотографии.</p>
+        
+        <hr>
+		
+	       <!--МЕНЮ ПАРАМЕТРОВ-->
+        <div class="dropdown">
+            <button onclick="hover" class="dropbtn">Изменения, регистр и ноты</button>
+            <div class="dropdown-content">
+			<a href="../HoTbI_pausa_prodaljitelnost/HoTbI_pausa_prodaljitelnost.html">Изучайте ноты, пауза и продолжительность</a></p>
+                <a href="../Alteracia_Registr_HoTbI/Alteracia_Registr_HoTbI.html">Изменения, регистр и ноты</a>              
+
+            </div>
+        </div>
+
+        <br/><br/><br/><br/>
+
+        <hr>
+        <h3>Инструкции:</h3>
+        <ol>
+            <li>Нажмите клавишу с запятой ",", чтобы прослушать аккорд, который будет транскрибирован столько раз, сколько вы хотите.</li> 
+            <li>Используйте QWERTY-клавиатуру как клавиатуру Perkins ("f" вместо точки "1", "d" = "2", "S" = "3"; "j" вместо точки "4", "k" = "5", "l" = "6").</li>
+            <li>Сначала напишите правую руку до конца, оставьте один пробел и продолжайте с правой стороны (не пишите знаки руки).</li>
+            <li>Сначала напишите ноту, то есть самое высокое для правой руки или самое низкое для левой,
+                 с соответствующей восьмой и всегда в круглой форме.</li>
+            <li>Для правой руки интервалы обозначаются сверху вниз, всегда относительно самой высокой ноты.</li>
+            <li>Для левого наоборот: интервалы пишутся снизу вверх по отношению к самомой нижней ноте.</li>
+            <li>Чтобы оценить свой ответ, нажмите клавишу "Ввод".</li>
+            <li>Если вы отказываетесь от аккорда, нажмите клавишу периода "." представить вам новый</li>
+        </ol>
+            
+        <p>Нажмите следующую кнопку или клавишу «a», чтобы воспроизвести звук транскрибируемого аккорда:</p>
+        <button onclick="play()" type="button">слушать аккорд</button>
+
+        <p><label for="respuesta">Ваш ответ:</label>
+        <input id="respuesta" type="text" autofocus></p> <!--размытие_onblur="this.focus()"-->
+        <p><input id="evaluar" type="Submit" onclick="evaluar()" value="Оценивать"></p>
+        <p><input id="siguiente" type="Submit" onclick="siguiente()" value="Следующий"></p>
+
+        <audio id="audio" type="audio/mpeg" preload="auto" controls></audio>
+		        <h3><label for="respuesta" id="nota"></label></h3>
+						<h5><img for="respuesta" id="imagen" style="background-color:white;"></h5>
+		        <style> /* Colores de alto contraste para personas con baja visibilidad*/
+            body,input,button {
+                color:#00CDFF;
+                background-color: black;
+            }
+            a {
+                color:chartreuse;
+            }
+            button,input{
+                height: 40px;
+                border-color: chartreuse;
+            }
+        </style>				
+
+        <hr>
+
+        <p><label><em>Ресурсы:</em></label></p>
+        <p><a href="./../../../tablica.html" title="Таблица базовой подписи Брайля (русский)" target="_blank">См. таблицу подписи Брайля</a></p>
+        <p><a href="./../../../pravila.html" title="Как Иg₽Aть" target="_blank">Как Иg₽Aть на ∞8₽ßиано (знакомство со шрифтом Брайля)</a></p>
+        <p><a href="https://github.com/Aibolem/BrailleTermWeb_Austereich/releases"
+            title="Использовать это приложение без Интернета" target="_blank">Использовать это приложение без Интернета</a></p>
+        <p><a href="mailto:composersunion.ge@musician.org" title="Отправить электронное п₽u©ьмо создателю этого кода©" target="_blank">Конта©кт</a></p>
+
+        <p><a id="pie" href="https://ja.wikipedia.org/wiki/自由ソフトウェア" title="自由ソフトウェア" target="_blank">自由ソフトウェア Э€то бесплатное веб-приложение с открытым исходным кодом,<br/>а также программное обеспечение, используемое чтобы создать его. А также в Джо $Рө он JÅ₽өng версии мой Дед и оммА [µ] говорят об ореn V.Ä.g.იnÅ'</a><br><p><a href="mailto:composersunion.ge@musician.org" title="нектрые ©лова и буквосочитания вам могут быть не ясны, свяжитесь с кодером" target="_blank">нектрые ©лова и буквосочитания вам могут быть не ясны, свяжитесь с кодером</a></br></p>
+		
+
+<!-- КödboK JÅвAR$©rui₽т в конце, чтобы не задерживать рендеринг страницы -->
+        <script src="script.js"></script>
+
+    </body>
+</html>
