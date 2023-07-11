@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+        <title>Те₽мБ₽айль. DB от ДвÅ₽gЭ€Ли вµнтерHæтвÅ₽©K$</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <meta property="og:title" content="Те₽мБ₽айль. DB от ДвÅ₽gЭ€Ли вµнтерHæтвÅ₽©K$">
+        <meta property="og:image" content="PagePreview.png">
+        <meta property="og:description" content="Пересмотрите базовый шрифт Брайля и музыковедение MO©uK bA℞.">
+        <meta property="og:url" content="https://Aibolem.github.io/BrailleTermWeb_Austereich/">
+
+    <link rel="icon" href="icon.png" type="image/icon type">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+        </style> 
+
+        <button id="NoCSS" onclick="desactivarCSS()">достуПная странµ©а</button>
+
+        <!--НАВИГАЦИОННАЯ ПАНЕЛЬ СУПЕРИОР SUPERIOR-->
+        <div class="navbar">
+            <div class="dropdownNav">
+                <button class="dropbtnNavWhenActive">Texт</button>
+                <div class="dropdownNav-content">
+                    <a href="index.html">©майля Б₽айлЯ</a>
+                    <a href="./picmo/picmo.html">Пишите ß Б₽айлЯ</a>
+                    <a href="./pravila/pravila.html">П₽Aßuла ßupтyaль</a>
+                    <a href="./bonus/bonus.html">Má©hina 'ßonu©'</a>
+                    <a href="./Text_v_braille/text_v_braille.html">Texт B Б₽айлЯ</a>
+                </div>  
+            </div>
+            <div class="dropdownNav">
+                <button class="dropbtnNav">MO©uKОграфµ®</button>
+                <div class="dropdownNav-content">
+                <a href="./muzbIka/dlja_He_zpjachix/HoTbI_pausa_prodaljitelnost/HoTbI_pausa_prodaljitelnost.html">Для Не Зрячих</a>
+                <a href="./muzbIka/HoTbI_pausa_prodaljitelnost/HoTbI_pausa_prodaljitelnost.html">Для Зрячих</a>
+                </div>  
+            </div>
+            <a href="https://ru.wikipedia.org/wiki/Шрифт_Брайля">Форум</a>
+            <a id="about" href="https://barionleg.github.io/froide/" target="_blank">О</a>
+        </div> 
+
+
+
+
+        <h1>DB'mе₽минаЛ'Б₽АйЛЬ A₽p ⠙⠃⠀⠠⠞⠻⠍⠔⠁⠇⠀⠠⠃⠗⠇</h1>
+        <h3>Иg₽A, которая позволяет зрячим и не зрячим пользователям просматривать базовое письмо Б₽АйЛЯ, игать на ∞8₽ßиано</h3>
+        
+        <hr>
+        <br/>
+
+        <select id="opcion">
+            <option value="none selected" selected="selected">Выберите, какие знаки вы хотите просмотреть:</option>
+            <option disabled>──── ß один ряд ────</option>
+            <option value="1a">Изучайте буквы только 1°-го ряда (а - и)</option>
+            <option value="2a">Изучайте буквы только 2°-го ряда (й - т)</option>
+            <option value="3a">Изучайте буквы только 3°-го ряда (у - ь)</option>
+            <option value="4a">Изучайте буквы только 4°-го ряда (э - я)</option>
+            <option value="Пунктуация">Изучайте только знаки препинания (наиболее часто используемые)</option>
+            <option value="Числа">Изучайте только числа (0–9)</option>
+
+            <option disabled>──── несколько строк ────</option>
+            <option value="1-2">Изучите 1 и 2 строки.</option>
+            <option value="1-3">Изучите 1, 2 и 3 строки.</option>
+            <option value="1-4">Изучить все 4 строки.</option>
+            <option value="1-5">Изучите весь алфавит и знаки препинания.</option>
+            <option value="1-6">Изучайте алфавит, знаки препинания и цифры.</option>
+        </select>
+
+        <p><label id="letraBraille" class="letraBraille"><br/>· ·<br/>· ·<br/>· ·<br/></label></p>
+
+        <p><label id="veredicto"><em>Нажмите "Далее", чтобы отобразить знак Брайля</em></label></p>
+        <p><input type="text" id="respuesta" placeholder="Ответ:"></p>
+        
+        <p><input id="evaluar" type="Submit" onclick="evaluar()" value="Оценить"></p>
+        <p><input type="Submit" onclick="Далее()" value="Далее"></p>
+        <p><label id="mensaje"></label></p>
+
+        <hr>
+        
+        <p><label><em>Ресурсы:</em></label></p>
+        <p><a href="tablica.html" title="Таблица базовой подписи Брайля (русский)" target="_blank">См. таблицу подписи Брайля</a></p>
+        <p><a href="pravila.html" title="Как Иg₽Aть" target="_blank">Как Иg₽Aть на ∞8₽ßиано (знакомство со шрифтом Брайля)</a></p>
+        <p><a href="https://github.com/Aibolem/BrailleTermWeb_Austereich/releases"
+            title="Использовать это приложение без Интернета" target="_blank">Использовать это приложение без Интернета</a></p>
+        <p><a href="mailto:composersunion.ge@musician.org" title="Отправить электронное п₽u©ьмо создателю этого кода©" target="_blank">Конта©кт</a></p>
+
+        <p><a id="pie" href="https://ja.wikipedia.org/wiki/自由ソフトウェア" title="自由ソフトウェア" target="_blank">自由ソフトウェア Э€то бесплатное веб-приложение с открытым исходным кодом,<br/>а также программное обеспечение, используемое чтобы создать его. А также в Джо $Рө он JÅ₽өng версии мой Дед и оммА [µ] говорят об ореn V.Ä.g.იnÅ'</a><br><p><a href="mailto:composersunion.ge@musician.org" title="нектрые ©лова и буквосочитания вам могут быть не ясны, свяжитесь с кодером" target="_blank">нектрые ©лова и буквосочитания вам могут быть не ясны, свяжитесь с кодером</a></br></p>
+		
+
+<!-- КödboK JÅвAR$©rui₽т в конце, чтобы не задерживать рендеринг страницы -->
+        <script src="script.js"></script>
+
+    </body>
+</html>
