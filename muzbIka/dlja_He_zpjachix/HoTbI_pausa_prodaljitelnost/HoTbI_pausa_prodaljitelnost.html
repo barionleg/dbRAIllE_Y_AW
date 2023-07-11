@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+      
+        <title>DB'mе₽минаЛ'Б₽АйЛЬ A₽p ⠙⠃⠀⠠⠞⠻⠍⠔⠁⠇⠀⠠⠃⠗⠇</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta property="og:title" content="BrailleTerm Musicografía">
+        <meta property="og:image" content="../../PagePreviewMusic.png">
+        <meta property="og:description" content="Repasa la signografía elemental de la musicografía braille.">
+        <meta property="og:url" content="https://barionleg.github.io/froide/">
+    
+	<link rel="icon" href="../../../icon.png" type="image/icon type">
+  <link href="../../../style.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <button><a href="../../HoTbI_pausa_prodaljitelnost/HoTbI_pausa_prodaljitelnost.html">Вернуться на сайт для зрячих</a></button>
+		
+        <h1><center>DB'mе₽минаЛ'Б₽АйЛЬ A₽p ⠙⠃⠀⠠⠞⠻⠍⠔⠁⠇⠀⠠⠃⠗⠇</center></h1>
+        <p><center>Просмотрите элементарную сигнографию брайлевской нотографии.</center></p>
+        
+        <hr>
+        <p><label><em>Выберите, какие элементы просмотреть:</em></label></p>
+
+        <!--МЕНЮ ПАРАМЕТРОВ-->
+        <div class="dropdown">
+            <button onclick="hover" class="dropbtn">Изменения, регистр и ноты</button>
+            <div class="dropdown-content">
+                <a href="../Alteracia_Registr_HoTbI/Alteracia_Registr_HoTbI.html">Изменения, регистр и ноты</a>
+                <a href="../AkkopdbI/AkkopdbI.html">Аккорды</a>
+
+            </div>
+        </div>
+
+        <br/>
+ 
+        <hr>
+        
+<center><h3>Инструкции:</h3>
+         <p><label>Введите знак Брайля для примечания с указанной ниже длительностью, используя QWERTY-клавиатуру, как показано ниже.
+             Клавиатура Perkins ("f" вместо точки "1" ⠁ "d" = "2" ⠂ "s" = "3" ⠄ "j" вместо точки "4" ⠈ "k" = "5" ⠐ "L" = "6" ⠠).<br/>
+             Чтобы оценить свой ответ, нажмите клавишу "Ввод".<br/>
+             Если вы отказываетесь от ноты, нажмите клавишу точки "." познакомить вас с новым.<br/>
+        </label></p>
+
+        <h3><label for="respuesta" id="nota"></label></h3>
+		<h5><img for="respuesta" id="imagen" style="background-color:white;"></h5>
+
+        <p><label for="respuesta">Ваш ответ:</label>
+        <input id="respuesta" type="text" autofocus></p>
+        <p><input id="evaluar" type="Submit" onclick="evaluar()" value="Оценивать"></p>
+        <p><input type="Submit" onclick="siguiente()" value="Следующий"></center></p>
+        <style> /* Colores de alto contraste para personas con baja visivilidad*/
+            body,input,button {
+                color:#00CDFF;
+                background-color: black;
+            }
+            a {
+                color:chartreuse;
+            }
+            button,input{
+                height: 40px;
+                border-color: chartreuse;
+            }
+        </style>
+        <hr>
+
+        <p><label><center><em>Ресурсы:</em></label></p>
+        <p><a href="./../../../tablica.html" title="Таблица базовой писанины Брайля (₽усский)" target="_blank">См. таблицу подписи Брайля</a></p>
+        <p><a href="./../../../pravila.html" title="Как Иg₽Aть" target="_blank">Как Иg₽Aть на ∞8₽ßиано (знакомство со шрифтом Брайля)</a></p>
+        <p><a href="https://github.com/Aibolem/BrailleTermWeb_Austereich/releases"
+            title="Использовать это приложение без Интернета" target="_blank">Использовать это приложение без Интернета</a></p>
+        <p><a href="mailto:composersunion.ge@musician.org" title="Отправить электронное п₽u©ьмо создателю этого кода©" target="_blank">Конта©кт</a></p>
+
+        <p><a id="pie" href="https://ja.wikipedia.org/wiki/自由ソフトウェア" title="自由ソフトウェア" target="_blank">自由ソフトウェア Э€то бесплатное веб-приложение с открытым исходным кодом,<br/>а также программное обеспечение, используемое чтобы создать его. А также в Джо $Рө он JÅ₽өng версии мой Дед и оммА [µ] говорят об ореn V.Ä.g.იnÅ'</a><br><p><a href="mailto:composersunion.ge@musician.org" title="нектрые ©лова и буквосочитания вам могут быть не ясны, свяжитесь с кодером" target="_blank">нектрые ©лова и буквосочитания вам могут быть не ясны, свяжитесь с кодером</a></br></center></p>
+
+<!-- КödboK JÅвAR$©rui₽т в конце, чтобы не задерживать рендеринг страницы -->
+        <script src="script.js"></script>
+
+    </body>
+</html>
