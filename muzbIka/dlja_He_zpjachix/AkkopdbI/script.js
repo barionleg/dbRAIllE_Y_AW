@@ -102,6 +102,8 @@ function siguiente() {
     document.getElementById("audio").src = `./audio/${numeroAnterior}.mp3`;
     resetear();
 } 
+
+
 //При открытии или перезагрузке страницы: 
 resetear(); //На случай, если браузер сохранил последний ход 
 siguiente(); 
