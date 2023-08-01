@@ -120,10 +120,6 @@ alert("Для правой руки,запишите
 );
 
 
-//Al abrir o recargar la página:
-resetear() //Por si el navegador guardó la última jugada
-siguiente()
-
 /* Al presionar 'enter' después de escribir en la casilla de input se activa el botón 'Evaluar',
    y al presionar "a" se reproduce el audio */
 document.addEventListener("keyup", function(event) {
