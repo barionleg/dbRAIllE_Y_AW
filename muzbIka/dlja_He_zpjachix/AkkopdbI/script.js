@@ -117,7 +117,6 @@ alert("Для правой руки,запишите
 шпаргалку, чуть позже добавиться страница где вы можете \ 
 \nнайти вводное руководство по брайлевской нотографии. bunioჼ КомпозА℞ &∞ ჼ©ŒmeЖ sien©e 1932 )" 
 
-);
 
 
 /* Al presionar 'enter' después de escribir en la casilla de input se activa el botón 'Evaluar',
