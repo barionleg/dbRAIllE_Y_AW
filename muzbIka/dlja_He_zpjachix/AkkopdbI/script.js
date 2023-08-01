@@ -117,6 +117,9 @@ alert("Для правой руки,запишите
 шпаргалку, чуть позже добавиться страница где вы можете \ 
 \nнайти вводное руководство по брайлевской нотографии. bunioჼ КомпозА℞ &∞ ჼ©ŒmeЖ sien©e 1932 )" 
 
+);
+
+
 //Al abrir o recargar la página:
 resetear() //Por si el navegador guardó la última jugada
 siguiente()
