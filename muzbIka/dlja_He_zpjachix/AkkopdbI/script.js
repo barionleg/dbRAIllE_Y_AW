@@ -104,19 +104,9 @@ function siguiente() {
 } 
 
 
-//При открытии или перезагрузке страницы:
-resetear(); //На случай, если браузер сохранил последний ход
-siguiente();
-document.getElementById("veredictoDerecha").innerHTML = "Введите правильный знак для каждого интервала, затем нажмите <em>оценить</em>."
-document.getElementById("veredictoIzquierda").innerHTML = "Если ваш результат правильный, нажмите <em>Далее</em> чтобы отобразить новый аккорд."
-alert("Для правой руки,запишите интервалы относительно верхней ноты сверху вниз.\
-    \nДля левой руки записывайте ноты относительно нижней ноты.\
-    \nЕсли есть изменение, оно записывается перед разрывом.\
-    \nВы можете нажать 'Enter', чтобы оценить свой ответ и ключ, чтобы указать ' . ', чтобы показать новый аккорд.\
-    \n\n(Для получения дополнительной информации смотрите шпаргалку, чуть позже добавиться страница где вы можете \
-      \nнайти вводное руководство по брайлевской нотографии. bunioჼ КомпозА℞ &∞ ჼ©ŒmeЖ sien©e 1932 )"
-);
-
+//Al abrir o recargar la página:
+resetear() //Por si el navegador guardó la última jugada
+siguiente()
 
 /* Al presionar 'enter' después de escribir en la casilla de input se activa el botón 'Evaluar',
    y al presionar "a" se reproduce el audio */
